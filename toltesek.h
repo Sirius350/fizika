@@ -17,8 +17,9 @@ protected:
     float vy;
     float ax;
     float ay;
+
 public:
-    Toltesek(int q, int m, float x, float y, float vx, float vy, float ax, float ay) : q(q), m(m), x(x), y(y), vx(vx), vy(vy) {}
+    Toltesek(int q, int m, float x, float y, float vx, float vy, float ax, float ay) : q(q), m(m), x(x), y(y), vx(vx), vy(vy), ax(ax), ay(ay) {}
     virtual ~Toltesek() = default;
     int getQ(){return q;}
     int getM(){return m;}

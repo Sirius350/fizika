@@ -4,7 +4,9 @@ project(fizika)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(fizika main.cpp
-        toltesek.h)
+        toltesek.h
+        cmake-build-debug/Pozitiv_T.cpp
+        Pozitiv_T.cpp)
 
 
 
