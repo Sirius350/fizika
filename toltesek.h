@@ -1,34 +1,33 @@
-//
-// Created by marto on 2026. 02. 27..
-//
-
 #ifndef FIZIKA_TOLTESEK_H
 #define FIZIKA_TOLTESEK_H
 
 #include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
 
 class Toltesek{
 protected:
-    int q;
-    int m;
-    float x;
-    float y;
-    float vx;
-    float vy;
-    float ax;
-    float ay;
+    float q;
+    float m;
+    sf::Vector2f pozi;
+    sf::Vector2f seb;
+    sf::Vector2f gyors;
+    sf::CircleShape kor;
 
 public:
-    Toltesek(int q, int m, float x, float y, float vx, float vy, float ax, float ay) : q(q), m(m), x(x), y(y), vx(vx), vy(vy), ax(ax), ay(ay) {}
+    Toltesek(float q, sf::Vector2f pozi, sf::Color szin);
     virtual ~Toltesek() = default;
-    int getQ(){return q;}
-    int getM(){return m;}
-    float getX(){return x;}
-    float getY(){return y;}
-    float getVX(){return vx;}
-    float getVY(){return vy;}
-    float getAx(){return ax;}
-    float getAy(){return ay;}
+
+    float getQ();
+    float getM();
+    sf::Vector2f getPozi();
+    sf::Vector2f getSeb();
+    sf::Vector2f getGyors();
+    sf::CircleShape& getKor();
+
+    void setPozi(sf::Vector2f kov);
+    void setSeb(sf::Vector2f ujSeb);
+    void setGyors(sf::Vector2f ujGyors);
+    void setQ(float ujQ);
 
 };
 
