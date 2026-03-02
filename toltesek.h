@@ -17,11 +17,11 @@ public:
     Toltesek(float q, sf::Vector2f pozi, sf::Color szin);
     virtual ~Toltesek() = default;
 
-    float getQ();
-    float getM();
-    sf::Vector2f getPozi();
-    sf::Vector2f getSeb();
-    sf::Vector2f getGyors();
+    float getQ() const ;
+    float getM() const ;
+    sf::Vector2f getPozi() const ;
+    sf::Vector2f getSeb() const ;
+    sf::Vector2f getGyors() const ;
     sf::CircleShape& getKor();
 
     void setPozi(sf::Vector2f kov);

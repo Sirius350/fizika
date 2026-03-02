@@ -26,6 +26,7 @@ int main()
     sf::Vector2f upozi = {0,0};
 
 
+
     while (window.isOpen())
     {
         while (std::optional<sf::Event> event = window.pollEvent()) {
@@ -62,7 +63,7 @@ int main()
             }
 
 
-            if(megy) {
+            while(megy) {
                 for (int i = 0; i < toltesek.size(); i++){
                     for (int j = i + 1; j < toltesek.size(); j++) {
                         if (toltesek[i]->getQ() == (toltesek[j]->getQ())*-1 and tav(toltesek[i]->getPozi(), toltesek[j]->getPozi())){
@@ -73,8 +74,11 @@ int main()
                             toltesek.push_back(t);
                             break;
                         }
+
+
                     }
                 }
+                megy = false;
             }
 
 
