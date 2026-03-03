@@ -13,12 +13,13 @@ protected:
     float q;
     float m;
     sf::Vector2f pozi;      //ahova levan rakva
-    sf::Vector2f seb;       //
+    sf::Vector2f seb;       //be lehet állítami
     sf::Vector2f gyors;     //nincs használva
     sf::CircleShape kor;
 
 public:
     Toltesek(float q, sf::Vector2f pozi, sf::Color szin);
+    Toltesek(float q, float m, sf::Vector2f pozi, sf::Vector2f seb, sf::Color szin);
     Toltesek();
     ~Toltesek() = default;
 
@@ -38,6 +39,7 @@ public:
     void move(sf::Vector2f ujMz);
     Toltesek& operator<<=(std::vector<Toltesek*> & lista);
     Toltesek& operator-=(std::vector<Toltesek*> & lista);
+
 
 };
 
