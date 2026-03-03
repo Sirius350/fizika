@@ -20,9 +20,12 @@ int main()
     window.setFramerateLimit(60);
     std::vector<Toltesek*> toltesek;
     sf::Vector2f egerpozi;
+    Toltesek b;
 
 
     sf::Vector2f upozi = {0,0};
+
+    bool g_ny_u_f = false;
 
 
 
@@ -60,6 +63,12 @@ int main()
                 toltesek.push_back(t);
             }
             bool spaceNyomva = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Space);
+
+            bool g_ny_m = sf::Keyboard::isKeyPressed(sf::Keyboard::Key::G);
+            if (g_ny_m && !g_ny_m) {
+                b <<= toltesek;
+            }
+            g_ny_u_f = g_ny_m;
 
 
 

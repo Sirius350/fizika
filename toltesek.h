@@ -3,6 +3,10 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include <cstdlib>
 
 class Toltesek{
 protected:
@@ -15,6 +19,7 @@ protected:
 
 public:
     Toltesek(float q, sf::Vector2f pozi, sf::Color szin);
+    Toltesek();
     ~Toltesek() = default;
 
     float getQ() const ;
@@ -28,8 +33,11 @@ public:
     void setSeb(sf::Vector2f ujSeb);
     void setGyors(sf::Vector2f ujGyors);
     void setQ(float ujQ);
+    void setM(float ujM);
 
     void move(sf::Vector2f ujMz);
+    Toltesek& operator<<=(std::vector<Toltesek*> & lista);
+    Toltesek& operator-=(std::vector<Toltesek*> & lista);
 
 };
 
