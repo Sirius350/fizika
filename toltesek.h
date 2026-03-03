@@ -8,14 +8,14 @@ class Toltesek{
 protected:
     float q;
     float m;
-    sf::Vector2f pozi;
-    sf::Vector2f seb;
-    sf::Vector2f gyors;
+    sf::Vector2f pozi;      //ahova levan rakva
+    sf::Vector2f seb;       //
+    sf::Vector2f gyors;     //nincs használva
     sf::CircleShape kor;
 
 public:
     Toltesek(float q, sf::Vector2f pozi, sf::Color szin);
-    virtual ~Toltesek() = default;
+    ~Toltesek() = default;
 
     float getQ() const ;
     float getM() const ;
@@ -28,6 +28,8 @@ public:
     void setSeb(sf::Vector2f ujSeb);
     void setGyors(sf::Vector2f ujGyors);
     void setQ(float ujQ);
+
+    void move(sf::Vector2f ujMz);
 
 };
 

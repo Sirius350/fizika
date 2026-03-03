@@ -15,6 +15,11 @@ sf::Vector2f Toltesek::getGyors() const  {return gyors;}
 sf::CircleShape& Toltesek::getKor() {return kor;}
 
 void Toltesek::setPozi(sf::Vector2f kov) {pozi += kov;}
-void Toltesek::setSeb(sf::Vector2f ujSeb) {seb = ujSeb;}
+void Toltesek::setSeb(sf::Vector2f ujSeb) {seb = ujSeb;kor.setPosition(pozi);}
 void Toltesek::setGyors(sf::Vector2f ujGyors) {gyors = ujGyors;}
 void Toltesek::setQ(float ujQ) {q = ujQ;}
+
+void Toltesek::move(sf::Vector2f ujMz) {
+    pozi += ujMz;
+    kor.move(pozi);
+}
