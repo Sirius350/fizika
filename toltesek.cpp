@@ -1,5 +1,6 @@
 #include "Toltesek.h"
 
+//ha kézzel tesszük le a konstuktora
 Toltesek::Toltesek(float q, sf::Vector2f pozi, sf::Color szin) : q(q), m(0.01f), pozi(pozi), seb(0.f, 0.f), gyors(0.f, 0.f) {
     kor.setRadius(10.f);
     kor.setOrigin({10.f, 10.f});
@@ -16,7 +17,7 @@ Toltesek::Toltesek() {
 
 }
 
-
+//ha fáljbololvassuk be a konstruktora
 Toltesek::Toltesek(float q, float m, sf::Vector2f pozi, sf::Vector2f seb, sf::Color szin) : q(q), m(m), pozi(pozi), seb(seb) {
     kor.setRadius(10.f);
     kor.setOrigin({10.f, 10.f});
@@ -37,11 +38,13 @@ void Toltesek::setGyors(sf::Vector2f ujGyors) {gyors = ujGyors;}
 void Toltesek::setQ(float ujQ) {q = ujQ;}
 void Toltesek::setM(float ujM) {m = ujM;}
 
+//mozgatás
 void Toltesek::move(sf::Vector2f ujMz) {
     pozi += ujMz;
     kor.setPosition(pozi);
 }
 
+//<<= operátor
 Toltesek& Toltesek::operator<<= (std::vector<Toltesek*> &lista) {
     if (lista.empty()) {
         return *this;
@@ -51,6 +54,7 @@ Toltesek& Toltesek::operator<<= (std::vector<Toltesek*> &lista) {
     lista[sorsz]->setM((static_cast<float>(rand() / RAND_MAX) * (2*lista[sorsz]->getQ()+1) - lista[sorsz]->getQ()));
 }
 
+//-= operátor
 Toltesek &Toltesek::operator-=(std::vector<Toltesek *> &lista) {
     if (lista.empty()) {
         return *this;

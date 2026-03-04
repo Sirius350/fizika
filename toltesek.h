@@ -7,7 +7,7 @@
 #include <vector>
 #include <cmath>
 #include <cstdlib>
-
+// atöltések osztály
 class Toltesek{
 protected:
     float q;
@@ -18,8 +18,8 @@ protected:
     sf::CircleShape kor;
 
 public:
-    Toltesek(float q, sf::Vector2f pozi, sf::Color szin);
-    Toltesek(float q, float m, sf::Vector2f pozi, sf::Vector2f seb, sf::Color szin);
+    Toltesek(float q, sf::Vector2f pozi, sf::Color szin);   //ha kézzel tesszük le a konstuktora
+    Toltesek(float q, float m, sf::Vector2f pozi, sf::Vector2f seb, sf::Color szin);    //ha fáljbololvassuk be a konstruktora
     Toltesek();
     ~Toltesek() = default;
 
@@ -36,9 +36,9 @@ public:
     void setQ(float ujQ);
     void setM(float ujM);
 
-    void move(sf::Vector2f ujMz);
-    Toltesek& operator<<=(std::vector<Toltesek*> & lista);
-    Toltesek& operator-=(std::vector<Toltesek*> & lista);
+    void move(sf::Vector2f ujMz);   //mozgatás
+    Toltesek& operator<<=(std::vector<Toltesek*> & lista);  //<<= opraátor
+    Toltesek& operator-=(std::vector<Toltesek*> & lista);   //-= operátor
 
 
 };
