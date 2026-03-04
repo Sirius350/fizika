@@ -19,6 +19,7 @@ Ha zöld ként akkor az egér
 ballklik = pozitív piros 
 jobbklik = negatív kék
 h gomb lenyomásával és oda ahol az egér van = semleges sárga
+Pontokat lerakni csak a rácsos hátterűre lehet és akkor lesz csak pontos ha alaphelyzetben van
 Mind kettő funkcióba van
 k gomb = törlés
 esc = kilépés
