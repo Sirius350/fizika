@@ -80,7 +80,7 @@ std::vector<Toltesek*> faljbe(const std::string& fajlNev) { //fáljbeolvasás
         std::stringstream ss(line);
         std::string mezo;
         std::vector<std::string> adatok;
-        while (std::getline(ss, mezo, ';')) {   //a ; mentés feldarabolja a szöveget
+        while (std::getline(ss, mezo, ';')) {   //a ; mentén feldarabolja a szöveget
             adatok.push_back(mezo);
         }
         if (adatok.size() == 7) {   //a feldarabolt szövegböl létre hoz egy objektumot és beleteszi egy listába
@@ -97,7 +97,7 @@ std::vector<Toltesek*> faljbe(const std::string& fajlNev) { //fáljbeolvasás
 }
 
 sf::Texture makeGrid(const sf::Vector2i& size, int boxSize, const sf::Color& bgColor, const sf::Color& lineColor) { //a rácsháló létrehozása
-    sf::RenderTexture out({(unsigned)size.x, (unsigned)size.y}); // SFML 3.0
+    sf::RenderTexture out({(unsigned)size.x, (unsigned)size.y});
     out.clear(bgColor);
     sf::RectangleShape line;
     line.setFillColor(lineColor);
