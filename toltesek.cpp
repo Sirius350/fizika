@@ -44,7 +44,7 @@ void Toltesek::move(sf::Vector2f ujMz) {
     kor.setPosition(pozi);
 }
 
-//<<= operátor
+//<<= operátor egy random töltés M jét egy random számra állítja
 Toltesek& Toltesek::operator<<= (std::vector<Toltesek*> &lista) {
     if (lista.empty()) {
         return *this;
@@ -54,7 +54,7 @@ Toltesek& Toltesek::operator<<= (std::vector<Toltesek*> &lista) {
     lista[sorsz]->setM((static_cast<float>(rand() / RAND_MAX) * (2*lista[sorsz]->getQ()+1) - lista[sorsz]->getQ()));
 }
 
-//-= operátor
+//-= operátor random mennyiségű töltést töröl a listábol
 Toltesek &Toltesek::operator-=(std::vector<Toltesek *> &lista) {
     if (lista.empty()) {
         return *this;
