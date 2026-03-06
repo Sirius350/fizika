@@ -75,20 +75,15 @@ int main()
                 if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Left)) {      //bal klik pozitív
                 Toltesek* t = new Toltesek(1.f ,egerpozi, sf::Color::Red);
                 toltesek.push_back(t);
-            }
+                }
                 if (sf::Mouse::isButtonPressed(sf::Mouse::Button::Right)) {      //jobb klik negatív
                 Toltesek* t = new Toltesek(-1.f ,egerpozi, sf::Color::Blue);
                 toltesek.push_back(t);
-            }
+                }
                 if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::H)) {         //h és ahol az egér van oda semleges
                     Toltesek* t = new Toltesek(0.f ,egerpozi, sf::Color::Yellow);
                     toltesek.push_back(t);
                 }
-                if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::K)){          //összes törlése
-                    for (Toltesek* t : toltesek)
-                        delete t;
-                    toltesek.clear();
-            }
             }
             if (!chackbox  && !volt_box) {      //fálj betöltés
                 toltesek = faljbe("adatok.txt");
@@ -101,6 +96,12 @@ int main()
 
 
 
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::K)){          //összes törlése
+                for (Toltesek* t : toltesek)
+                    delete t;
+                toltesek.clear();
+                volt_box = false;
+            }
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Add)) {       //a t növelése
                 t += 0.1f;
             }
