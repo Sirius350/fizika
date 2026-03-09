@@ -1,10 +1,11 @@
 #ifndef FIZIKA_TAVOLSAG_H
 #define FIZIKA_TAVOLSAG_H
-#include <cmath>
+
 #include <fstream>
 
 #include "SFML/System/Vector2.hpp"
 #include "Toltesek.h"
+#include <cstdlib>
 
 //dx vagy dy-t adja vissza
 inline float d_tav(const  sf::Vector2f& v1, const  std::string n, const  sf::Vector2f& v2) {
@@ -37,8 +38,10 @@ bool chackbocmutat() {
     bool mousePrev = false;
     while (window.isOpen() && !done) {
         while (std::optional<sf::Event> event = window.pollEvent()) {
-            if (event->is<sf::Event::Closed>())
+            if (event->is<sf::Event::Closed>()) {
                 window.close();
+                std::exit(0);
+            }
         }
         bool mouseNow = sf::Mouse::isButtonPressed(sf::Mouse::Button::Left);    //kattintás érzékelés egyszer
         if (mouseNow && !mousePrev) {

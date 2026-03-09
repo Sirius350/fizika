@@ -39,6 +39,7 @@ int main()
     float t = 0.01f;
 
     sf::View view = window.getView();
+    sf::Vector2f eredetiPoz = view.getCenter();  // Eredeti középpont
     float speed = 300.f;
     sf::Clock clock;
 
@@ -101,6 +102,9 @@ int main()
                     delete t;
                 toltesek.clear();
                 volt_box = false;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::G)) {
+                view.setCenter(eredetiPoz);  // visszaállítja az eredeti pozíciót
             }
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Add)) {       //a t növelése
                 t += 0.1f;

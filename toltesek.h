@@ -2,11 +2,9 @@
 #define FIZIKA_TOLTESEK_H
 
 #include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
-#include <iostream>
+
 #include <vector>
-#include <cmath>
-#include <cstdlib>
+
 // atöltések osztály
 class Toltesek{
 protected:
